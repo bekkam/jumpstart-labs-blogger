@@ -1,0 +1,13 @@
+<h1>All Articles</h1>
+
+<ul id="articles">
+    <% @articles.each do |article| %>
+        <li>
+            <!-- When the template is rendered, it will output HTML like this: -->
+            <!-- <a href="/articles/1">First Sample Article</a> -->
+            <%= link_to article.title, article_path(article), class: 'article_title' %>
+        </li>
+    <% end %>
+</ul>
+           <!-- class: 'new_article' adds html attribute class=new_article -->
+<%= link_to "Create a New Article", new_article_path, class: "new_article" %>
